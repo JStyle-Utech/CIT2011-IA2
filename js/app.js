@@ -52,7 +52,7 @@ function populateTicket() {
   if (fullnameDisplay) fullnameDisplay.textContent = fullname;
   if (fullnameTicket) fullnameTicket.textContent = fullname;
   if (githubLink) {
-    githubLink.textContent = github;
+    githubLink.textContent = github.startsWith("@") ? github : "@" + github;
     githubLink.href = `https://github.com/${github.replace("@", "")}`;
   }
 
