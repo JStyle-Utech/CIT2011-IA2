@@ -1,0 +1,207 @@
+:root {
+  --color-dark-purple: #1a1a3a;
+  --color-purple: #6100ea;
+  --color-gradient-start: #f74780;
+  --color-gradient-end: #855fe8;
+  --color-white: #ffffff;
+  --color-neutral: #d1d0d5;
+
+  --font-family: "inconsolata", monospace;
+  --font-size: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--color-dark-purple);
+  color: var(--color-white);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+header img {
+  width: 150px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-neutral);
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.event-details {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+}
+
+.login-section {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-neutral);
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+#submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  color: var(--color-white);
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.confirmation {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.confirmation h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.ticket-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.ticket {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticket-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#avatar-display {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-white);
+}
+
+#github-link {
+  color: var(--color-neutral);
+  text-decoration: none;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .login-section {
+    padding: 1rem;
+  }
+
+  .ticket {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+a:focus,
+button:focus,
+input:focus {
+  outline: 3px solid var(--color-gradient-end);
+  outline-offset: 2px;
+}

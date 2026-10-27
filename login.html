@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Login - Coding Conference</title>
+  </head>
+  <body>
+    <header>
+      <img src="assets/images/logo-full.svg" alt="Coding conf logo" />
+    </header>
+    <main>
+      <section class="login-section">
+        <h1>Your Journey to Coding Conf Starts Here</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+        <form id="registration-form" novalidate>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="github">GitHub Username</label>
+            <input
+              type="text"
+              id="github"
+              name="github"
+              placeholder="@yourusername"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="avatar">Avatar Upload</label>
+            <input type="file" id="avatar" name="avatar" accept="image/*" />
+          </div>
+          <button type="submit" id="submit-btn">Generate My Ticket</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 Coding Conference. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
