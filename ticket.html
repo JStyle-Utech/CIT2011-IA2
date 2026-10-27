@@ -13,14 +13,21 @@
     <title>Ticket - Coding Conference</title>
   </head>
   <body>
+    <!-- same logo/header as the other pages -->
     <header>
       <img src="assets/images/logo-full.svg" alt="Coding conf logo" />
     </header>
+
     <main>
+      <!-- congrats message - name gets filled in by app.js once it
+           reads it back from localStorage -->
       <section class="confirmation">
         <h1>Congrats, <span id="fullname-display"></span>!</h1>
         <p>Your ticket is ready.</p>
       </section>
+
+      <!-- the actual ticket card - everything inside .ticket-info starts
+           empty and gets populated on page load by populateTicket() in app.js -->
       <section class="ticket-section">
         <div class="ticket">
           <img src="assets/images/logo-mark.svg" alt="Coding conf logo" />
@@ -28,14 +35,19 @@
             <img id="avatar-display" src="" alt="User Avatar" />
             <h2 id="fullname-ticket"></h2>
             <a id="github-link" href="" target="_blank">@github-username</a>
+            <!-- placeholder number, gets swapped for the real generated
+                 one by app.js -->
             <p>Generated: #01609</p>
           </div>
         </div>
       </section>
     </main>
+
     <footer>
       <p>&copy; 2026 Coding Conference. All rights reserved.</p>
     </footer>
+
+    <!-- pulls saved data from localStorage and fills in the ticket above -->
     <script src="js/app.js"></script>
   </body>
 </html>
