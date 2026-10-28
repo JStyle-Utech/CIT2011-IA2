@@ -10,36 +10,54 @@
       href="assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Coding Conference</title>
+    <title>Coding Conf - Home</title>
   </head>
   <body>
-    <!-- Site header: logo shown on every page -->
+    <!-- skip link so keyboard users can jump straight past the header -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- same logo/header as the other pages -->
     <header>
-      <img src="assets/images/logo-full.svg" alt="Coding conf logo" />
+      <a href="index.html" aria-label="Coding Conf home">
+        <img src="assets/images/logo-full.svg" alt="Coding Conf logo" />
+      </a>
     </header>
 
-    <!-- Main landing page content -->
-    <main>
-      <!-- Hero section: event title and tagline -->
+    <main id="main">
+      <!-- hero: event title and tagline -->
       <section class="hero">
-        <h1>Coding Conference</h1>
-        <p>Join us for an amazing tech conference</p>
+        <h1>Your Journey to Coding Conf 2026 Starts Here!</h1>
+        <p>
+          Join thousands of developers for a day of talks, workshops and
+          networking. Secure your spot at the biggest coding conference of the
+          year.
+        </p>
       </section>
 
-      <!-- Event details: date and location -->
-      <section class="event-details">
-        <h2>Event Details</h2>
-        <p>Date: October 26, 2026</p>
-        <p>Location: Papine Kgn</p>
+      <!-- date and location, kept in a list so screen readers announce it -->
+      <section class="event-details" aria-labelledby="details-heading">
+        <h2 id="details-heading">Event Details</h2>
+        <ul>
+          <li><strong>Date:</strong> October 26, 2026</li>
+          <li><strong>Location:</strong> Papine, Kgn</li>
+        </ul>
       </section>
 
-      <!-- Call-to-action: links to the registration form -->
+      <!-- short overview of what attendees get -->
+      <section class="overview" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">What to Expect</h2>
+        <p>
+          Keynotes from industry leaders, hands-on workshops, and a chance to
+          meet the local developer community.
+        </p>
+      </section>
+
+      <!-- call to action - goes to the registration form -->
       <a href="login.html" class="btn">Register Now</a>
     </main>
 
-    <!-- Site footer: copyright notice -->
     <footer>
-      <p>&copy; 2026 Coding Conference. All rights reserved.</p>
+      <p>&copy; 2026 Coding Conf. All rights reserved.</p>
     </footer>
   </body>
 </html>

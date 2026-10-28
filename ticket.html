@@ -10,44 +10,66 @@
       href="assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Ticket - Coding Conference</title>
+    <title>Your Ticket - Coding Conf</title>
   </head>
   <body>
-    <!-- same logo/header as the other pages -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <header>
-      <img src="assets/images/logo-full.svg" alt="Coding conf logo" />
+      <a href="index.html" aria-label="Coding Conf home">
+        <img src="assets/images/logo-full.svg" alt="Coding Conf logo" />
+      </a>
     </header>
 
-    <main>
-      <!-- congrats message - name gets filled in by app.js once it
-           reads it back from localStorage -->
+    <main id="main">
+      <!-- congrats message - the name is filled in by ticket.js -->
       <section class="confirmation">
-        <h1>Congrats, <span id="fullname-display"></span>!</h1>
-        <p>Your ticket is ready.</p>
+        <h1>
+          Congrats, <span id="fullname-display"></span>! Your ticket is ready.
+        </h1>
+        <p>
+          We've emailed your ticket to <span id="email-display"></span> and will
+          send updates as the event gets closer.
+        </p>
       </section>
 
-      <!-- the actual ticket card - everything inside .ticket-info starts
-           empty and gets populated on page load by populateTicket() in app.js -->
-      <section class="ticket-section">
-        <div class="ticket">
-          <img src="assets/images/logo-mark.svg" alt="Coding conf logo" />
-          <div class="ticket-info">
-            <img id="avatar-display" src="" alt="User Avatar" />
-            <h2 id="fullname-ticket"></h2>
-            <a id="github-link" href="" target="_blank">@github-username</a>
-            <!-- placeholder number, gets swapped for the real generated
-                 one by app.js -->
-            <p>Generated: #01609</p>
+      <!-- the glass ticket - every empty spot below is filled by ticket.js -->
+      <section class="ticket-section" aria-label="Your conference ticket">
+        <article class="ticket">
+          <div class="ticket-top">
+            <img
+              class="ticket-logo"
+              src="assets/images/logo-full.svg"
+              alt="Coding Conf"
+            />
+            <p class="ticket-meta">October 26, 2026 / Papine, Kgn</p>
           </div>
-        </div>
+
+          <div class="ticket-person">
+            <img id="avatar-display" src="" alt="Your uploaded avatar" />
+            <div>
+              <h2 id="fullname-ticket"></h2>
+              <a id="github-link" href="" target="_blank" rel="noopener">
+                <img
+                  class="github-icon"
+                  src="assets/images/icon-github.svg"
+                  alt=""
+                />
+                <span id="github-text"></span>
+              </a>
+            </div>
+          </div>
+
+          <p class="ticket-number" id="ticket-number"></p>
+        </article>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2026 Coding Conference. All rights reserved.</p>
+      <p>&copy; 2026 Coding Conf. All rights reserved.</p>
     </footer>
 
-    <!-- pulls saved data from localStorage and fills in the ticket above -->
-    <script src="js/app.js"></script>
+    <!-- ticket.js reads localStorage and redirects home if nothing is saved -->
+    <script src="js/ticket.js"></script>
   </body>
 </html>
