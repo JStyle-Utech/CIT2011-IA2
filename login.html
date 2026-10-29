@@ -10,30 +10,50 @@
       href="assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Login - Coding Conference</title>
+    <title>Register - Coding Conf</title>
   </head>
   <body>
-    <!-- same logo/header as the other pages -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <header>
-      <img src="assets/images/logo-full.svg" alt="Coding conf logo" />
+      <a href="index.html" aria-label="Coding Conf home">
+        <img src="assets/images/logo-full.svg" alt="Coding Conf logo" />
+      </a>
     </header>
 
-    <main>
+    <main id="main">
       <section class="login-section">
-        <h1>Your Journey to Coding Conf Starts Here</h1>
+        <h1>Your Journey to Coding Conf 2026 Starts Here!</h1>
         <p>Secure your spot at next year's biggest coding conference.</p>
 
-        <!-- turned off native browser validation since we're checking
-             everything ourselves in app.js -->
+        <!-- novalidate turns off the browser's own popups because
+             validation.js shows errors next to each field instead -->
         <form id="registration-form" novalidate>
           <div class="form-group">
             <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" required />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              autocomplete="name"
+              aria-describedby="fullname-error"
+              required
+            />
+            <p class="error-message" id="fullname-error" role="alert"></p>
           </div>
 
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              autocomplete="email"
+              aria-describedby="email-error"
+              required
+            />
+            <p class="error-message" id="email-error" role="alert"></p>
           </div>
 
           <div class="form-group">
@@ -43,15 +63,28 @@
               id="github"
               name="github"
               placeholder="@yourusername"
+              aria-describedby="github-error"
               required
             />
+            <p class="error-message" id="github-error" role="alert"></p>
           </div>
 
-          <!-- optional - gets converted to base64 in app.js so we can
-               save it to localStorage and pull it up again on ticket.html -->
+          <!-- avatar is checked for type and size in validation.js, then
+               converted to base64 so it can be kept in localStorage -->
           <div class="form-group">
-            <label for="avatar">Avatar Upload</label>
-            <input type="file" id="avatar" name="avatar" accept="image/*" />
+            <label for="avatar">Upload Avatar</label>
+            <input
+              type="file"
+              id="avatar"
+              name="avatar"
+              accept="image/png, image/jpeg"
+              aria-describedby="avatar-hint avatar-error"
+              required
+            />
+            <p class="hint" id="avatar-hint">
+              JPG or PNG only, max file size 500KB.
+            </p>
+            <p class="error-message" id="avatar-error" role="alert"></p>
           </div>
 
           <button type="submit" id="submit-btn">Generate My Ticket</button>
@@ -60,11 +93,10 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Coding Conference. All rights reserved.</p>
+      <p>&copy; 2026 Coding Conf. All rights reserved.</p>
     </footer>
 
-    <!-- this is what runs the validation, saves everything, and sends
-         the user over to their ticket -->
-    <script src="js/app.js"></script>
+    <!-- validation.js does all the checking and saving -->
+    <script src="js/validation.js"></script>
   </body>
 </html>
